@@ -47,6 +47,7 @@ class MainWindow(QMainWindow):
 
         self.panelHappy = Panel("happy.png")
         self.panelNeutral = Panel("neutral.png")
+
         self.panelSad = Panel("sad.png")
 
         lay.addWidget(self.panelHappy,0,0)
