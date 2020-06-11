@@ -20,9 +20,10 @@ class MainWindow(QMainWindow):
         self.slider.setOrientation(Qt.Horizontal)
         self.slider.setTickInterval(1)
         self.slider.setMinimum(10)
-        self.slider.setMaximum(100)
+        self.slider.setMaximum(300)
         l.addWidget(self.slider)
-        l.addWidget(panel.Panel())
+        self.container = panel.Panel()
+        l.addWidget(self.container)
         self.slider.valueChanged.connect(self.changedValue)
         w.setLayout(l)
         self.setCentralWidget(w)
@@ -30,8 +31,8 @@ class MainWindow(QMainWindow):
 
     def changedValue(self):
         size = self.slider.value()
-        self.panel.r=size
-        print(size)
+        self.container.setR(size)
+        self.container.update()
 
 App = QApplication(sys.argv)
 window = MainWindow()

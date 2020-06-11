@@ -1,5 +1,4 @@
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
 import sys
 import panel
 
@@ -7,7 +6,7 @@ import panel
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setGeometry(500,200,600,600)
+        self.setFixedSize(600,600)
         self.title = "Kółeczko - Serwer"
         self.setWindowTitle(self.title)
         self.menubar=self.menuBar()
